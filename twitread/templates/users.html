@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Twitter Users</title>
+    </head>
+    <body>
+        
+        <h1>Users</h1>
+        <h3><a href="/">Home</a></h3>
+
+        <h2>Add User</h2>
+        <form action="/users" method="POST">
+            <input type="text" name="name">
+            <input type="submit" value="Add">
+        </form>
+        <p>{{message[0]}}</p>
+
+        <h2>Users</h2>
+        <h4>id, name</h4>
+        <table>
+            {% for user in users %}
+            <tr>
+                <td>{{user.id}}: {{user.name}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>

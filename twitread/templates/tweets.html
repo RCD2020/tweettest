@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Twitter Tweets</title>
+    </head>
+    <body>
+        
+        <h1>Tweets</h1>
+        <h3><a href="/">Home</a></h3>
+
+        <table>
+            {% for tweet in tweets %}
+            <tr>
+                <td>@{{users[tweet.userid-1].name}}: {{tweet.text}}</td>
+                <td>
+                    <form action="/tweets" method="POST">
+                        <input type="hidden" value="{{tweet.id}}" name="vector">
+                        <input type="submit" value="Vector">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Vectored</h2>
+        <p>{{vector}}</p>
+
+    </body>
+</html>

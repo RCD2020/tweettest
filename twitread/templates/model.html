@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Twitter Predict</title>
+    </head>
+    <body>
+        
+        <h1>Predictive Modeling</h1>
+        <h3><a href="/">Home</a></h3>
+
+        <h2>Test Tweet</h2>
+        <form action="/model" method="POST">
+            <p>User 1: @<input type="text" name="name1"></p>
+            <p>User 2: @<input type="text" name="name2"></p>
+            <br>
+            <p>Input tweet here:</p>
+            <textarea name="tweet" cols="30" rows="10" maxlength="280"></textarea>
+            <br>
+            <input type="submit" value="Test">
+        </form>
+
+        <h2>Results</h2>
+        <p>{{ modelOutput }}</p>
+
+    </body>
+</html>
